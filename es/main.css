@@ -1,0 +1,1487 @@
+/* ========== RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fffbd9;
+  font-family: Arial, "Poppins", sans-serif;
+}
+
+
+/* ========== HEADER ========== */
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 135px;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.logo img {
+  height: 75px;
+}
+
+.nav-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 50px;
+}
+
+.nav-links a {
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  margin-top: 2px;
+  color: #0d2417;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.weather {
+  font-family: "Poppins", Arial, sans-serif;
+  color: #0d2417;
+  font-weight: 300;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.weather img {
+  width: 32px;
+  height: 32px;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 7px; /* afstand mellem flagene */
+}
+
+.lang-switch a {
+  display: inline-block;
+  border-radius: 6px; /* runde hjørner */
+  overflow: hidden;   /* sørger for at flaget følger runde hjørner */
+  transition: filter 0.3s;
+}
+
+.lang-switch a:hover {
+  filter: brightness(85%);
+}
+
+.lang-switch a .flag {
+  width: 19px;
+  height: 19px;       /* gør dem firkantede */
+  display: block;
+  border-radius: 6px; /* runde hjørner på selve billedet */
+  object-fit: cover;  /* sikrer at flaget passer pænt i boksen */
+}
+
+
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: -10px;      /* udvider lidt ud over containeren */
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  object-fit: cover;
+  z-index: 0;
+}
+
+.news-box {
+  width: 150px;
+  height: 35px;
+  background: #fffbd9;
+  color: #10341e;
+  font-weight: 600;
+  font-size: 0.7rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  cursor: pointer;
+  z-index: 10001; /* ligger OVER panelet */
+}
+
+/* Panelet (skjult til venstre) */
+#newsPanel {
+  position: absolute;
+  top: 0;
+  left: -100vw;        /* Skjult helt ude til venstre */
+  width: 100vw;        /* Fuldt viewport-bredde */
+  height: 100vh;       /* Fuldt viewport-højde */
+  background: #10341e;
+  overflow: hidden;
+  transition: left 0.5s ease; /* Glider ind */
+  z-index: 10000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Når panelet er aktivt → fylder hele skærmen */
+#newsPanel.active {
+  left: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.news__eyebrow {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #10341e;
+  font-size: 0.8rem;
+  margin-top: 20px;
+}
+
+.news-panel.active {
+  height: 100vh;
+  overflow: hidden; /* Ingen scroll når åbent */
+}
+
+/* Indhold i panelet */
+.news-content {
+  display: flex;
+  justify-content: center; /* centrerer grid */
+  align-items: center;
+  max-width: 1100px;
+  padding: 20px;
+  color: #10341e;
+  font-family: sans-serif;
+}
+
+/* Grid til 3 nyheder */
+.news-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center; /* centrerer grid-indhold horisontalt */
+  align-items: center;     /* centrerer grid lodret */
+}
+
+/* Én nyhed */
+.news-item {
+  padding: 10px;
+  background: #fffbd9;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 30%;
+  min-width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Billede */
+.news-image {
+  width: 100%;
+  height: auto;
+  display: block;
+} 
+
+/* Tekst */
+.news-text {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 0.9rem;
+  padding: 2px;
+  text-align: center; /* centrerer teksten */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* tilføjer luft mellem tekst og knap */
+}
+
+/* Tekst */
+.news-text h3 {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1.8rem;
+  text-align: center; /* centrerer teksten */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* tilføjer luft mellem tekst og knap */
+}
+
+/* Knappen */
+.news-link button {
+  font-family: "Poppins", sans-serif;
+  width: 50%;        /* mindre bredde, så den ser pænere ud */
+  background: #fffbd9;
+  color: #10341e;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.news-link button:hover {
+  color: #37e379;
+}
+
+
+.news-link button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333; /* fx en mørk baggrund */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.news-link button:hover {
+    background-color: red; /* Baggrund bliver rød ved hover */
+
+}
+
+
+
+@media (max-width: 1200px) {
+
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolonner på mobil */
+    gap: 15px;
+  }
+
+  .news-item {
+    width: 80%;
+    padding: 8px;
+  }
+
+  .news-image {
+  display: none;
+}
+
+  .news-text h3 {
+    font-size: 2rem;
+  }
+
+  .news-text p {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* Pilen i knappen */
+#arrowIcon {
+  margin-left: 6px;
+  font-weight: bold;
+  transition: transform 0.6s ease;
+}
+
+/* Disable scrolling på body når panel er åbent */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Knappen */
+.video-toggle {
+  position: absolute;
+  bottom: 35px;
+  right: 45px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-color: #fffbd9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 90;
+  transition: background-color 0.2s, transform 0.2s;
+  overflow: hidden;
+}
+
+/* Ikoner – skjult som standard */
+.video-toggle img {
+  max-width: 40%;
+  max-height: 40%;
+  display: none;
+  position: absolute;
+}
+
+/* Kun det aktive ikon vises */
+.video-toggle .pause-icon.active,
+.video-toggle .play-icon.active {
+  display: block;
+}
+
+
+
+.flag-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-right: 3px;
+}
+
+
+/* ========== HERO CONTENT ========== */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+  z-index: 2; /* over overlay */
+  max-width: 1200px;
+  padding: 40px 40px;
+  color: #10341e; /* mørk tekst mod lys baggrund */
+}
+
+.small-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  padding: 5px;
+  margin-bottom: 0.4rem;
+  padding-left: 10px;
+  color: #10341e;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.description {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 4.8rem;
+  color: #fffbd9;
+  line-height: 1.1;
+  opacity: 0.9;
+  font-weight: bold;
+}
+
+
+
+
+
+.accordion-section {
+  width: 100%;
+  height: 80dvh;
+  background-color: #fffbd9;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-inner {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- ITEMS --- */
+.accordion-item {
+  border-bottom: 1px solid #10341e;
+  overflow: hidden;
+}
+
+/* --- HEADER --- */
+.accordion-header {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #153020;
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-size: 2rem;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.accordion-header {
+  color:#10341e;
+  -webkit-text-stroke: 0px #10341e; /* ingen outline til at starte med */
+  transition: all 0.2s ease;
+}
+
+.accordion-header:hover {
+  color: transparent; /* så fill ikke blander sig med outline */
+  -webkit-text-stroke: 1px #10341e; /* outlinefarven */
+}
+
+/* --- IKON --- */
+.accordion-icon {
+  font-size: 2rem;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  padding-right: 20px;
+}
+
+/* --- CONTENT --- */
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition:
+    max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.accordion-content p {
+  width: 65%;
+  color: #0d2417;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  padding-bottom: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.accordion-item.active .accordion-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+
+
+
+/* --- image-text component --- */
+.image-text {
+  width: 100%;
+  height: 100dvh;
+  padding: 80px 20px;
+  background: #fffbd9;
+  background: url("images/sun.jpg") center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  position: relative;
+}
+
+.image-text__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 100px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.image-text__eyebrow {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #10341e;
+  font-size: 0.8rem;
+  margin-bottom: 1px;
+  padding-left: 3px;
+}
+
+.image-text__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #10341e;
+  margin-bottom: 10px;
+}
+
+.image-text__subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #10341e;
+  margin-bottom: 10px;
+}
+
+.image-text__body {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  color: #10341e;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.image-text__button {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  display: inline-flex;       /* Gør knappen til en flex-container */
+  align-items: center;        /* Centrerer vertikalt */
+  justify-content: center;    /* Centrerer horisontalt */
+  gap: 6px;                   /* Afstand mellem ikon og tekst */
+  
+  padding: 12px 26px;
+  background-color: #10341e;
+  color: #fffbd9;
+  text-decoration: none;
+  font-weight: 400;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.image-text__button:hover {
+  background-color: #10341e;
+}
+
+.image-text__link span {
+  font-size: 0.7rem;
+  margin-right: 6px;
+}
+
+.image-text__link:hover {
+  color: transparent; /* så fill ikke blander sig med outline */
+  -webkit-text-stroke: 0.7px #10341e;
+}
+
+.image-text__image {
+  width: 100%;
+  height: 700px;
+  margin-top: 50px;
+  border-radius: 10px;
+  overflow: hidden; /* Gør så billedet ikke går udenfor rammen */
+}
+
+
+
+
+
+
+
+
+
+
+
+.full-video-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fffbd9;
+}
+
+.full-video-container video {
+  width: 95%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 10px;
+  
+}
+
+
+.centered-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fffbd9;
+  font-size: 5rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+/* --- image-text component --- */
+.menu-image-text {
+  width: 100%;
+  height: auto;
+  padding: 80px 20px;
+  background: #fffbd9;
+  background: url("images/sun2.jpg") center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  position: relative;
+}
+
+.image-text__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 100px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.image-text__eyebrow {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #10341e;
+  font-size: 0.8rem;
+  margin-bottom: 1px;
+  padding-left: 3px;
+}
+
+.image-text__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #10341e;
+  margin-bottom: 20px;
+  margin-top: 13px;
+  font-weight: 700;
+}
+
+.image-text__subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #10341e;
+  margin-bottom: 10px;
+}
+
+.image-text__body {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  color: #10341e;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.image-text__link {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #10341e;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.image-text__link span {
+  font-size: 0.5rem;
+  margin-right: 6px;
+}
+
+.image-text__link:hover {
+  color: transparent; /* så fill ikke blander sig med outline */
+  -webkit-text-stroke: 0.7px #10341e; /* outlinefarven */
+}
+
+.image-text__image img {
+  width: 100%;
+  height: 600px;
+  margin-top: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+
+}
+
+
+
+
+
+.social-club {
+  width: 95%;
+  height: 70dvh;
+  margin: 0 auto; /* centrerer hele containeren */
+  border-radius: 12px; /* tilføjet radius */
+  overflow: hidden; /* for at sikre at border-radius klipper indholdet */
+}
+
+/* Hero image container */
+.social-club-hero {
+  position: relative;
+  width: 100%;
+  height: 70dvh; /* fylder 60% af viewport height */
+  overflow: hidden;
+}
+
+/* Hero image */
+.social-club-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px; /* tilføjet for at matche containeren */
+}
+
+/* Overlay for text */
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centrerer helt */
+  text-align: center;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-overlay .btn {
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.hero-overlay .btn:hover {
+  background: #ddd;
+}
+
+
+/* Responsive */
+@media (min-width: 768px) {
+  
+  .hero-overlay h1 {
+    font-size: 3rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1.5rem;
+  }
+
+  /* --- image-text component --- */
+.image-text {
+  width: 100%;
+  height: auto;
+  padding: 80px 20px;
+  background: #fffbd9;
+  background: url("images/sun.jpg") center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  position: relative;
+}
+  
+}
+
+
+
+
+
+
+
+.icon-section {
+  display: flex;
+  gap: 25px; /* afstand mellem ikonerne */
+  justify-content: center; /* centrerer ikonerne horisontalt */
+  align-items: center; /* centrerer ikonerne vertikalt, hvis de har forskellig højde */
+  padding: 20px; /* lidt luft omkring sektionen */
+}
+
+.icon {
+  width: 135px; /* kan tilpasses */
+}
+
+
+/* Sektionen der styrer højden */
+.vibes {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10%;
+}
+
+/* Header med eyebrow og H1 */
+.vibes-header {
+  text-align: center;
+  margin: 200px 0 60px 0;
+}
+
+
+.vibes__eyebrow {
+  color: #fffbd9;
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 auto -70px; /* lidt margin-bottom for mindre gap */
+  text-align: center;
+}
+
+.vibes-header h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  color: #10341e;
+  line-height: 1.4;
+  margin: 0; /* kan evt. justeres til margin-top: 0.1rem; hvis nødvendigt */
+}
+
+/* Selve grid'en */
+.vibes-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 500px;
+  gap: 15px;
+  justify-content: center;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto 85px auto;
+}
+
+/* Grid items */
+.grid-item {
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Billeder og videoer */
+.grid-item img,
+.grid-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Hover-effekt på billeder og videoer */
+.grid-item:hover img,
+.grid-item:hover video,
+.grid-item a:hover img,
+.grid-item a:hover video {
+  transform: scale(1.05);
+}
+
+/* Teksten under grid */
+.vibes-text {
+  text-align: center;
+}
+
+.vibes-text h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  color: #153020;
+  line-height: 1.3;
+  letter-spacing: 1px;
+}
+
+/* Mobilvisning */
+@media (max-width: 768px) {
+  
+  .vibes-header {
+    margin: 60px 0 40px 0;
+  }
+
+  .vibes-header h1 {
+    font-size: 2rem;
+  }
+
+  .vibes-grid {
+    padding: 25px;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 350px;
+    gap: 25px;
+  }
+  
+}
+
+
+
+
+
+
+
+/* Flex container til formular + info */
+.contact-container {
+  display: flex;
+  gap: 40px;
+  width: 90%;
+  margin: 20px auto;
+}
+
+/* Venstre (formularen) */
+.contact-wrapper {
+  width: 90%;
+}
+
+/* Højre (kort + info) */
+.contact-info {
+  width: 50%;
+  padding: 40px;
+  border-radius: 10px;
+  color: #fffbd9;
+}
+
+/* Google Maps */
+.contact-info .map iframe {
+  width: 100%;
+  height: 360px;
+  border: 0;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+/* Info sektion styling */
+.info-block h3 {
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  color: #10341e;
+}
+
+.info-block p {
+  margin-bottom: 3px;
+  color: #10341e;
+}
+
+/* Mobil venlig layout */
+@media(max-width: 900px) {
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-wrapper, .contact-info {
+    width: 100%;
+  }
+
+  /* --- image-text component --- */
+.image-text {
+  width: 100%;
+  height: auto;
+  padding: 80px 20px;
+  background: #fffbd9;
+  background: url("images/sun.jpg") center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  position: relative;
+}
+
+}
+
+
+
+
+ .contact-wrapper {
+      width: 90%;
+      margin: 80px auto;
+      background: #10341e;
+      padding: 40px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 10px;
+      font-size: 28px;
+      color: #fffbd9;
+    }
+
+    p.subtitle {
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 30px;
+      color: #fffbd9;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 20px;
+      display: block;
+      color: #fffbd9;
+    }
+
+    input, textarea {
+      width: 75%;
+      padding: 14px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    button {
+      font-family: "Poppins", sans-serif;
+      margin-top: 25px;
+      width: 50%;
+      padding: 16px;
+      background: #fffbd9;
+      color: #10341e;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+    color: transparent;               /* gør selve teksten gennemsigtig */
+    -webkit-text-stroke: 1px #10341e; /* giver teksten en outline */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero-content-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #000;
+}
+
+.hero-content-center h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 18rem;
+  color: transparent; /* ingen fyldfarve */
+  -webkit-text-stroke: 3px #fffbd9;
+  line-height: 1.4;
+  margin: 0;
+}
+
+
+
+
+
+.container {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px;
+    margin: 0 auto;
+  }
+
+  .container .wide {
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    background: #ddd;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .container .row {
+    display: flex;
+    gap: 20px;
+  }
+
+  .container .square {
+    flex: 1;
+    aspect-ratio: 1 / 1;
+    background: #ddd;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+
+  .container img {
+  width: 20%;
+  height: auto;
+  object-fit: cover;      /* Fylder hele boksen */
+  object-position: center; /* Centrerer motivet */
+  border-radius: 8px;     /* Matcher dine .wide og .square */
+  display: block;         /* Fjerner små mellemrum */
+}
+
+
+
+
+
+
+
+
+
+
+footer {
+  width: 100%;
+  min-height: 70dvh; /* Brug min-height i stedet for height */
+  background-color: #10341e;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  color: #fffbd9;
+  font-size: 14px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrerer hele indholdet vertikalt */
+}
+
+.footer-logo {
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 210px;
+  height: 210px;
+
+  /* brug spansk flag som baggrund */
+  background-image: url("../images/flag.png");
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.footer-logo img {
+    width: 120px;                /* logo størrelse */
+    height: auto;
+    display: block;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* kun 3 kolonner */
+  gap: 100px;
+  align-items: start;
+  justify-items: center;
+  text-align: center; /* centrer tekst i alle kolonner */
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrer alt indhold horisontalt */
+  height: 100%;
+  text-align: center;  /* Centrer tekst i hele kolonnen */
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #fffbd9;
+  text-align: center;         /* Centrerer teksten */
+  width: 100%;                /* Sørger for at teksten centreres inden for kolonnen */
+  display: flex;
+  justify-content: center;    /* Centrerer indholdet vandret */
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 6px;
+}
+
+.footer-column ul li a {
+  color: #fffbd9;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-column ul li a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Social ikoner – centreret */
+.social-icons {
+  display: flex;
+  gap: 18px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.social-icons a {
+  color: #fffbd9;
+  font-size: 22px;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  width: 60%;
+  margin: 80px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #fffbd9;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  font-size: 12px;
+
+}
+
+.footer-bottom a {
+  color: #fffbd9;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 968px) {
+  
+
+    .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr; /* én kolonne på mobil */
+    gap: 30px;
+    align-items: center; /* centrer vertikalt */
+    justify-items: center; /* centrer horisontalt */
+    text-align: center; /* centrer tekst */
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centrer indhold inde i hver kolonne */
+    text-align: center;
+  }
+
+  .footer-column h3 {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centrer elementer i bunden */
+    text-align: center;
+  }
+}
+
+
+
+   @media (max-width: 1600px) {
+
+  .hero-content-center h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 4rem;
+  color: transparent; /* ingen fyldfarve */
+  -webkit-text-stroke: 2px #fffbd9;
+  line-height: 1.4;
+  margin: 0;
+}
+   
+  
+  } 
+
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 968px) {
+
+  .accordion-section {
+  width: 85%;
+  height: 80dvh;
+  background-color: #fffbd9;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-header {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  color: #10341e;
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-size: 1.4rem;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.accordion-content p {
+  font-size: 0.8em;
+  width: 85%;
+  color: #10341e;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  padding-bottom: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+  .description {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 2.8rem;
+  color: #fffbd9;
+  line-height: 1.1;
+  opacity: 0.9;
+  font-weight: bold;
+}
+
+  .nav-links {
+    display: none;
+  }
+
+  .main-header {
+    padding: 15px 25px;
+  }
+
+  .hero-content {
+    left: 20px;
+    right: 20px;
+    transform: translateY(-50%);
+    padding: 30px 25px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+
+    .image-text__content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Sørg for at billedet kommer først */
+  .image-text__image {
+    height: auto;
+    order: -1;
+  }
+
+  .image-text__image img {
+    height: 400px;
+    margin-top: 0;
+  }
+
+  .image-text__title {
+    font-size: 18px;
+  }
+
+  .image-text__subtitle {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
