@@ -32,7 +32,7 @@ async function getWeather() {
 // Kør funktionen når siden indlæses
 getWeather();
 
-// Opdater vejret automatisk hvert 5. minut (300.000 ms)
+// Opdater vejret automatisk hvert 3. minut (300.000 ms)
 setInterval(getWeather, 300000);
 
 
