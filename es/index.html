@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luz De Alba - Málaga</title>
+  <title>Luz De Alba - Menú</title>
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="Luz De Alba es un auténtico café y bar español ubicado en Málaga, que ofrece tapas tradicionales, café fresco, vinos locales y un ambiente acogedor andaluz. Visítanos en el corazón de Málaga para una verdadera experiencia mediterránea.">
   <meta name="keywords" content="Luz De Alba Malaga, café español Malaga, bar de tapas Malaga, café andaluz, mejor café Malaga, bar local Malaga, tapas Malaga, cocina mediterránea Malaga">
   <meta name="author" content="Luz De Alba" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
   <!-- Open Graph Tags -->
   <meta property="og:title" content="Luz De Alba – Café y Bar Español Auténtico en Málaga">
-  <meta property="og:description" content="Disfruta de tapas tradicionales, café y vinos locales en Luz De Alba, un acogedor café y bar en el centro de Málaga.">
+  <meta property="og:description" content="Disfruta de tapas tradicionales, café y vinos locales en Luz De Alba, un café y bar acogedor en el centro de Málaga.">
   <meta property="og:type" content="business.business">
   <meta property="og:site_name" content="Luz De Alba">
   <meta property="og:locale" content="es_ES">
@@ -28,125 +29,134 @@
   <link rel="stylesheet" href="../main.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<section class="hero-container">
+   <section class="hero-container">
 
   <!-- HEADER -->
   <header class="main-header">
-    <a href="index.html" class="logo">
-      <img src="images/luzdealba.svg" alt="Luz De Alba" />
-    </a>
+   <a href="index.html" class="logo">
+  <img src="images/luzdealba.svg" alt="Luz De Alba" />
+</a>
 
-    <div class="nav-wrap">
-      <nav class="nav-links">
-        <a href="#">MENÚ</a>
-        <a href="#">AMBIENTE</a>
-        <a href="#">NOSOTROS</a>
-        <a href="#">EVENTOS</a>
-        <a href="#">CONTACTO</a>
-      </nav>
-    </div>
-
+     <div class="nav-wrap">
+  <nav class="nav-links">
+    <a href="menu.html">MENÚ</a>
+    <a href="vibes.html">AMBIENTE</a>
+    <a href="about-us.html">NOSOTROS</a>
+    <a href="events.html">EVENTOS</a>
+    <a href="contact.html">CONTACTO</a>
+  </nav>
+</div>
+    
     <div class="right-section">
-      <div class="weather" id="weather">
-        <!-- JS llenará el icono y la temperatura aquí -->
-      </div>
-      <div class="lang-switch">
-        <a href="../index.html" class="active">
-          <img src="images/english-icon.png" alt="English" class="flag">
-        </a>
-        <a href="../es/index.html">
-          <img src="../images/spanish-icon.png" alt="Español" class="flag">
-        </a>
-      </div>
-    </div>
+  <div class="weather" id="weather">
+    <!-- JS llenará el icono y la temperatura aquí -->
+  </div>
+  <div class="lang-switch">
+   <a href="../index.html">
+  <img src="images/english-icon.png" alt="English" class="flag">
+</a>
+<a href="../es/index.html" class="active">
+  <img src="images/spanish-icon.png" alt="Español" class="flag">
+</a>
+  </div>
+</div>
+    
 
   </header>
 
   <!-- HERO SECTION -->
-  <div class="hero-container">
-    <video class="hero-video" autoplay muted loop src="video/luzdealba-hero-video.mp4"></video>
-    <button class="video-toggle" id="videoToggle">
-      <img src="images/pause.png" alt="Pausar" class="pause-icon active">
-      <img src="images/play.png" alt="Reproducir" class="play-icon">
-    </button>
-  </div>
 
-  <div class="hero-content">
-    <p class="small-text">BUENOS MOMENTOS DEL AMANECER AL ATARDECER</p>
-    <p class="description">
-      En Luz de Alba, en el corazón de Málaga, se trata de un ambiente acogedor junto al mar,
-      excelentes bebidas y momentos inolvidables.
-    </p>
-  </div>
+   <div class="hero-container">
+  <video class="hero-video" autoplay muted loop src="../video/luzdealba-hero-video.mp4"></video>
+  <button class="video-toggle" id="videoToggle">
+    <img src="images/pause.png" alt="Pausar" class="pause-icon active">
+    <img src="images/play.png" alt="Reproducir" class="play-icon">
+   </button>
+ </div>
 
-  <div class="news-box" id="newsToggle">
+    <div class="hero-content">
+  <p class="small-text">BUENOS MOMENTOS DEL AMANECER AL ATARDECER</p>
+  <p class="description">
+    En Luz de Alba, en el corazón de Málaga, España. se trata de un ambiente acogedor junto a la playa,
+    excelentes bebidas y momentos inolvidables.
+  </p>
+
+</div>
+
+<div class="news-box" id="newsToggle">
     <p>Últimas Noticias<span id="arrowIcon">→</span></p>
-  </div>
+</div>
 
-  <div class="news-panel" id="newsPanel">
+<div class="news-panel" id="newsPanel">
+
     <div class="news-content">
-      <div class="news-grid">
+        <div class="news-grid">
 
-        <!-- News 1 -->
-        <div class="news-item">
-          <img src="images/ourstory.jpg" alt="Nuevo Menú de Cócteles" class="news-image">
-          <div class="news-text">
-            <p class="news__eyebrow">28/02/2025</p>
-            <h3>Nuevo Menú de Cócteles</h3>
-            <p>Prueba nuestros últimos cócteles artesanales, perfectos para las noches de verano</p>
-            <a href="#" class="image-text__button">Leer más</a>
-          </div>
+            <!-- News 1 -->
+            <div class="news-item">
+                <img src="images/ourstory.jpg" alt="Nuevo Menú de Cócteles" class="news-image">
+                <div class="news-text">
+                  <p class="news__eyebrow">28/02/2025</p>
+                    <h3>Nuevo Menú de Cócteles</h3>
+                    <p>Prueba nuestros últimos cócteles artesanales, perfectos para las noches de verano</p>
+                    <a href="#" class="image-text__button">Leer más</a>
+                </div>
+            </div>
+
+            <!-- News 2 -->
+            <div class="news-item">
+                <img src="images/band.jpg" alt="Noche de Música en Vivo" class="news-image">
+                <div class="news-text">
+                  <p class="news__eyebrow">04/06/2026</p>
+                    <h3>Noche de Música en Vivo</h3>
+                    <p>Acompáñanos este viernes para música en vivo y disfruta de un ambiente vibrante.</p>
+                    <a href="#" class="image-text__button">Leer más</a>
+                </div>
+            </div>
+
+            <!-- News 3 -->
+            <div class="news-item">
+                <img src="images/paella.jpg" alt="Brunch de Fin de Semana" class="news-image">
+                <div class="news-text">
+                  <p class="news__eyebrow">14/08/2026</p>
+                    <h3>Brunch de Fin de Semana</h3>
+                    <p>¡Nuestro brunch de fin de semana ha vuelto! Disfruta de comida deliciosa y bebidas refrescantes</p>
+                    <a href="#" class="image-text__button">Leer más</a>
+                </div>
+            </div>
+
         </div>
-
-        <!-- News 2 -->
-        <div class="news-item">
-          <img src="../images/band.jpg" alt="Noche de Música en Vivo" class="news-image">
-          <div class="news-text">
-            <p class="news__eyebrow">04/06/2026</p>
-            <h3>Noche de Música en Vivo</h3>
-            <p>Únete este viernes para música en vivo y disfruta de un ambiente vibrante.</p>
-            <a href="#" class="image-text__button">Leer más</a>
-          </div>
-        </div>
-
-        <!-- News 3 -->
-        <div class="news-item">
-          <img src="../images/paella.jpg" alt="Brunch de Fin de Semana" class="news-image">
-          <div class="news-text">
-            <p class="news__eyebrow">14/08/2026</p>
-            <h3>Brunch de Fin de Semana</h3>
-            <p>¡Nuestro brunch de fin de semana ha vuelto! Disfruta de comida deliciosa y bebidas refrescantes</p>
-            <a href="#" class="image-text__button">Leer más</a>
-          </div>
-        </div>
-
-      </div>
     </div>
-  </div>
+</div>
 
-</section>
 
-<section class="menu-image-text">
+
+
+  </section>
+
+
+  <section class="menu-image-text">
   <div class="image-text__content">
     <div class="image-text__text">
       <p class="image-text__eyebrow">Nuestro menú</p>
       <h2 class="image-text__title">
-        Sabores que unen a las personas — café, cócteles y amor por la artesanía
+        Sabores que unen a las personas
       </h2>
       <p class="image-text__subtitle">
         Cada taza, cada bocado, cada bebida cuenta su propia historia.  
-        Relájate, disfruta del ambiente y descubre tu nuevo favorito.
+        Siéntate, disfruta del ambiente — y descubre tu nuevo favorito.
       </p>
       <p class="image-text__body">
-        Nuestro menú incluye café recién hecho, bocados caseros, clásicos de brunch y cócteles
-        creativos. Ya sea para una parada rápida o una larga velada con amigos, tenemos algo
-        que se adapta a tu estado de ánimo. Bienvenido a tu lugar local de sabor, comodidad y buena compañía.
+        Nuestro menú incluye café recién hecho, bocados caseros, clásicos del brunch, 
+        y cócteles exclusivos con un toque creativo. Ya sea para una visita rápida 
+        o una larga velada con amigos, tenemos algo que se adapta a tu estado de ánimo.  
+        Bienvenido a tu lugar local de sabor, comodidad y buena compañía.
       </p>
       <a href="menu.html" class="image-text__button">Ver menú</a>
     </div>
@@ -156,16 +166,20 @@
   </div>
 </section>
 
+
 <section class="social-club">
+  <!-- Hero image -->
   <div class="social-club-hero">
-    <img src="images/social-club.jpg" alt="Imagen principal del club social">
-    <div class="hero-overlay"></div>
+    <img src="./images/social-club.jpg" alt="Imagen Hero Social Club">
+    <div class="hero-overlay">
+    
+    </div>
   </div>
 </section>
 
-<section class="image-text">
+   <section class="image-text">
   <div class="image-text__content">
-    <div class="image-text__image">
+     <div class="image-text__image">
       <img src="images/boss.jpg" alt="Barista sirviendo café y cócteles">
     </div>
     <div class="image-text__text">
@@ -174,12 +188,12 @@
         Elaborado con pasión - servido con alma
       </h2>
       <p class="image-text__subtitle">
-        Un café-bar vibrante donde el sabor, el ambiente y la comunidad se encuentran.
+        Un café-bar vibrante donde se encuentran el sabor, la atmósfera,<br> y la comunidad.
       </p>
       <p class="image-text__body">
-        Desde el primer espresso de la mañana hasta el último cóctel de la noche, reunimos
-        a las personas mediante un sabor excepcional y hospitalidad genuina. Nuestro equipo
-        combina creatividad, artesanía y cuidado para crear momentos dignos de saborear — cada taza, cada vertido, cada vez.
+        Desde el primer espresso de la mañana hasta el último cóctel de la noche, reunimos a las personas 
+        a través del sabor excepcional y la hospitalidad genuina. Nuestro equipo mezcla creatividad, 
+        oficio y cuidado para crear momentos que valen la pena saborear — cada taza, cada trago, cada vez.
       </p>
       <a href="about-us.html" class="image-text__button">Leer más</a>
     </div>
@@ -188,45 +202,67 @@
 
 <section class="full-video-container">
   <video autoplay muted loop playsinline>
-    <source src="video/luzdealba-bar-video.mp4" type="video/mp4">
-    Tu navegador no soporta el elemento de video.
+    <source src="../video/luzdealba-bar-video.mp4" type="video/mp4">
+    Tu navegador no soporta la etiqueta de video.
   </video>
-  <h1 class="centered-text">Saborea. Disfruta. Quédate.</h1>
+
+  <h1 class="centered-text">Saborea el momento <br> Quédate un rato</h1>
 </section>
+
+
 
 <section class="menu-image-text">
   <div class="image-text__content">
     <div class="image-text__text">
       <p class="image-text__eyebrow">El ambiente</p>
       <h2 class="image-text__title">
-        Donde las noches cobran vida — y cada bebida cuenta una historia
+        Donde los días cobran vida — y cada bebida cuenta una historia
       </h2>
       <p class="image-text__subtitle">
-        Una fusión audaz de artesanía, cultura y conexión. Esto es más que un bar — es tu nuevo ritual.
+        Una fusión audaz de arte, cultura y conexión. Esto es más que un bar — es tu nuevo ritual.
       </p>
       <p class="image-text__body">
-        Desde cócteles que desafían lo esperado hasta música que mueve el lugar,
-        cada detalle está diseñado para despertar conversación y elevar tu noche.
-        Entra, desacelera y disfruta de la energía — aquí el buen gusto se encuentra con la buena compañía.
+        Desde cócteles exclusivos que juegan con lo inesperado hasta música que mueve el ambiente, 
+        cada detalle está diseñado para despertar conversación y elevar tu noche.  
+        Entra, relájate y disfruta de la energía — aquí el buen gusto se encuentra con la buena compañía.
       </p>
-      <a href="menu.html" class="image-text__button">Ver más</a>
+      <a href="vibes.html" class="image-text__button">Ver más</a>
     </div>
     <div class="image-text__image">
-      <img src="images/enjoy.jpg" alt="Bartender elegante preparando cócteles bajo luces cálidas">
+      <img src="images/enjoy.jpg" alt="Bartender elegante mezclando cócteles bajo luces cálidas">
     </div>
   </div>
 </section>
+
+
+<div class="logo-section">
+  <div class="logo-track">
+    <div class="logo-track-inner">
+      <img src="images/logo-1.png" alt="">
+      <img src="images/logo-2.png" alt="">
+      <img src="images/logo-3.png" alt="">
+      <img src="images/logo-4.png" alt="">
+      <!-- Duplicar logos para desplazamiento suave -->
+      <img src="images/logo-1.png" alt="">
+      <img src="images/logo-2.png" alt="">
+      <img src="images/logo-3.png" alt="">
+      <img src="images/logo-4.png" alt="">
+    </div>
+  </div>
+</div>
+
+
 
 <section class="accordion-section">
   <div class="accordion-inner">
 
     <div class="accordion-item">
       <button class="accordion-header">
-        <span>Un café acogedor en el corazón de España</span>
+        <span>Un acogedor café en el corazón de España</span>
         <span class="accordion-icon">+</span>
       </button>
       <div class="accordion-content">
-        <p>Nuestro café ofrece un auténtico ambiente español con café recién hecho, pasteles caseros y especialidades locales, perfecto tanto para viajeros como para locales.</p>
+        <p>Nuestro café ofrece un ambiente español auténtico con café recién hecho, pasteles caseros y especialidades locales – perfecto tanto para viajeros como para locales.</p>
       </div>
     </div>
 
@@ -236,7 +272,7 @@
         <span class="accordion-icon">+</span>
       </button>
       <div class="accordion-content">
-        <p>Servimos desde espresso clásico y jugos frescos hasta tapas, brunch y postres caseros, siempre preparados con ingredientes frescos y pasión por el sabor.</p>
+        <p>Servimos desde espresso clásico y jugos frescos hasta tapas, brunch y postres caseros – siempre elaborados con ingredientes frescos y pasión por el sabor.</p>
       </div>
     </div>
 
@@ -246,7 +282,7 @@
         <span class="accordion-icon">+</span>
       </button>
       <div class="accordion-content">
-        <p>Combinamos el encanto español con la comodidad moderna. Nuestra terraza soleada es el lugar perfecto para relajarse, disfrutar de vinos locales y probar platos recién preparados.</p>
+        <p>Combinamos el encanto español con la comodidad moderna escandinava. Nuestra soleada terraza es el lugar perfecto para relajarse, disfrutar de vinos locales y saborear platos recién preparados.</p>
       </div>
     </div>
 
@@ -256,12 +292,13 @@
         <span class="accordion-icon">+</span>
       </button>
       <div class="accordion-content">
-        <p>Porque ofrecemos más que buena comida y café: ofrecemos una verdadera experiencia española donde cada huésped se siente como en casa.</p>
+        <p>Porque ofrecemos más que comida y café excelentes – ofrecemos una verdadera experiencia española donde cada invitado se siente en casa.</p>
       </div>
     </div>
 
   </div>
 </section>
+
 
 <section class="icon-section">
   <img src="images/icon-drink.png" alt="Icono 1" class="icon">
@@ -269,95 +306,96 @@
   <img src="images/icon-palm.png" alt="Icono 3" class="icon">
 </section>
 
+
+
 <section class="vibes">
   <div class="vibes-header">
-    <p class="image-text__eyebrow">Lo último</p>
+    <p class="image-text__eyebrow">Nuestros últimos</p>
     <h1>Momentos en Luz De Alba</h1>
   </div>
+  
+
+  
 
   <div class="vibes-grid">
      <div class="grid-item">
       <a href="#">
-        <video src="video/luzdealba-bar-contact.mp4" autoplay muted loop playsinline></video>
+        <video src="../video/luzdealba-bar-city.mp4" autoplay muted loop playsinline></video>
       </a>
     </div>
 
     <div class="grid-item">
       <a href="#">
-        <img src="images/food.jpg" alt="Ambiente 2">
+        <img src="images/food.jpg" alt="Momento 2">
       </a>
     </div>
 
     <div class="grid-item">
       <a href="#">
-        <img src="images/people.jpg" alt="Ambiente 3">
+        <img src="images/people.jpg" alt="Momento 3">
       </a>
     </div>
 
     <div class="grid-item">
       <a href="#">
-        <video src="video/luzdealba-bar-coffee.mp4" autoplay muted loop playsinline></video>
+        <video src="../video/luzdealba-bar-coffee.mp4" autoplay muted loop playsinline></video>
       </a>
     </div>
 
     <div class="grid-item">
       <a href="#">
-        <video src="video/luzdealba-bar-beer.mp4" autoplay muted loop playsinline></video>
+        <video src="../video/luzdealba-bar-view.mp4" autoplay muted loop playsinline></video>
       </a>
     </div>
+
 
     <div class="grid-item">
       <a href="#">
-        <img src="images/coffee.jpg" alt="Ambiente 5">
+        <img src="../images/paella.jpg" alt="Momento 5">
       </a>
     </div>
-  </div>
 
-  <div class="vibes-text">
-    <h2>Vive la Esencia de Luz De Alba</h2>
-  </div>
+
 </section>
 
-<section class="social-club">
-  <div class="social-club-hero">
-    <img src="images/sun.jpg" alt="Imagen principal del club social">
-    <div class="hero-overlay"></div>
-  </div>
-</section>
+
+
+
+
 
 <footer>
-  <!-- Logo centreret over footer-columns -->
+  <!-- Logo centrado sobre columnas del footer -->
   <div class="footer-logo">
-    <img src="images/luzdealba.svg" alt="Luz De Alba Logo">
+    <img src="images/luzdealba.svg" alt="Logo Luz De Alba">
   </div>
 
   <div class="footer-container">
     <div class="footer-column">
-      <h3>Contact</h3>
+      <h3>Contacto</h3>
       <ul>
         <li>Calle Larios 12</li>
-        <li>29005 Málaga, Spain</li>
-        <li>contact@luzdealba.com</li>
+        <li>29005 Málaga, España</li>
+        <li>contacto@luzdealba.com</li>
         <li>+34 951 23 45 67</li>
       </ul>
     </div>
 
 
     <div class="footer-column">
-      <h3>Opening hours</h3>
+      <h3>Horario</h3>
       <ul>
-        <li>Monday – Friday: 8:00 AM – 23.00 PM</li>
-        <li>Saturday: 9:00 AM – 02:00 AM</li>
-        <li>Sunday: 9:00 AM – 22:00 PM</li>    
+        <li>Lunes – Viernes: 8:00 AM – 23:00 PM</li>
+        <li>Sábado: 9:00 AM – 02:00 AM</li>
+        <li>Domingo: 9:00 AM – 22:00 PM</li>    
       </ul>
     </div>
 
     <div class="footer-column">
-      <h3>Social Media</h3>
+      <h3>Redes Sociales</h3>
       <ul>
-        <li>Facebook</li>
-        <li>Instagram</li>
-        <li>Youtube</li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Youtube</a></li>
       </ul>
     </div>
   </div>
@@ -367,6 +405,6 @@
   </div>
 </footer>
 
-<script src="../es/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
